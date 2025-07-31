@@ -3,7 +3,6 @@
 
 Welcome to the **source code** of my personal developer portfolio – a beautifully designed, responsive, and modern web page that showcases my skills, projects, and contact information.
 
-Live Site 🌍: _[Coming Soon or Add Your Deployed Link]_
 
 ---
 
