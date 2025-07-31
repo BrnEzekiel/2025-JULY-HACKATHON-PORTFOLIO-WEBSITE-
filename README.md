@@ -1,87 +1,105 @@
-Brian's Portfolio
-This repository contains the source code for Brian's personal portfolio website, a responsive and modern web presence built with HTML, Tailwind CSS, and vanilla JavaScript. The portfolio showcases Brian's skills, projects, and provides an easy way to get in touch.
+# 💼 Brian's Developer Portfolio
 
-Features
-Responsive Design: Optimized for various screen sizes, from mobile devices to desktops.
+Welcome to the source code for **Brian's Personal Portfolio Website**!  
+This site showcases my skills, projects, resume, and contact information in a sleek, responsive layout built with modern web technologies.
 
-Dark Mode Toggle: Users can switch between light and dark themes based on their preference, with the setting saved locally.
+👉 **Live Demo:** _[Coming Soon or Insert Your Live Link]_  
+📄 **Resume:** Available directly from the site!
 
-Clear Navigation: Smooth scrolling to different sections of the page (Home, About Me, Projects, Contact).
+---
 
-Project Showcase: Dedicated section to highlight key projects with descriptions and links.
+## 🚀 Tech Stack
 
-Skills Section: A comprehensive list of technical skills.
+This project is built using:
 
-Contact Form: A simple form for visitors to send messages.
+- **HTML5** – Semantic and well-structured
+- **Tailwind CSS** – For fast, responsive, utility-first styling
+- **JavaScript (Vanilla)** – Interactive behavior like theme toggle
+- **Font Awesome 6** – Iconography for social links and theme control
+- **Google Fonts (Inter)** – Clean and readable typography
+- **Responsive Design** – Works beautifully on mobile, tablet, and desktop
 
-Resume Download: Direct link to download Brian's resume.
+---
 
-Social Media Integration: Links to Brian's social media profiles.
+## 🎯 Features
 
-Technologies Used
-HTML5: Structure and content of the web page.
+- 🌞 **Light/Dark Mode Toggle** – Automatically detects system preference with manual override.
+- 👨‍💻 **Hero Section** – Friendly intro with a photo and quick action buttons.
+- 🧠 **About Me** – My background, experience, and core values.
+- 🛠️ **Skills Display** – Tagged badges for each technical skill.
+- 📁 **Project Showcase** – Scrollable cards linking to live demos.
+- 📬 **Contact Form** – Clean and functional form layout.
+- 📄 **Resume Download** – One-click download with a custom filename.
+- 🌐 **Social Links** – Icons for Facebook, Twitter, LinkedIn, GitHub, and Instagram.
 
-Tailwind CSS: A utility-first CSS framework for rapid and consistent styling.
+---
 
-JavaScript: For interactive elements, specifically the dark mode toggle functionality.
+## 📸 Preview
 
-Font Awesome: Icon library used for social media icons and the theme toggle icon.
+![Portfolio Preview](https://placehold.co/1000x600/blue/white?text=Brian's+Portfolio+Preview)
 
-Setup and Installation
-To get a local copy up and running, follow these simple steps:
+---
 
-Clone the repository:
+## 🧰 How to Run Locally
 
-Bash
+To view this site locally on your machine:
 
-git clone https://github.com/brnezekiel/brians-portfolio.git
-Navigate to the project directory:
+```bash
+git clone https://github.com/brnezekiel/portfolio.git
+cd portfolio
+open index.html
+Or simply drag and drop the index.html file into your browser.
 
-Bash
+📁 Folder Structure
+bash
+Copy
+Edit
+📁 portfolio/
+├── 📄 index.html          # Main HTML file
+├── 📄 CV.pdf              # Resume file
+├── 🖼️ pic.png             # Profile image
+├── 🌐 favicon.*           # Icons for browser tabs and mobile
+├── 📄 site.webmanifest    # PWA manifest
+🙋‍♂️ Who Am I?
+“Hi, I’m Brian – a Front-end Developer with a passion for building intuitive and impactful digital experiences. I thrive on solving real-world problems through clean code and beautiful design.”
 
-cd brians-portfolio
-Open index.html:
-Simply open the index.html file in your preferred web browser. Since this is a static site, no build step or local server is required.
+🗓 Started coding: 2021
+🌍 Based in: Kenya
+🧠 Main Focus: React, Tailwind, UX/UI, and Full-Stack JS
+🍳 Hobbies: Hiking, cooking, and exploring new frameworks
 
-Project Structure
-brians-portfolio/
-├── index.html          // Main portfolio page
-├── pic.png             // Profile picture
-└── CV.pdf              // Resume file
-Customization
-You can easily customize this portfolio to make it your own:
+🤝 Let's Connect
+Feel free to reach out or follow me on the platforms below:
 
-Content:
+📘 Facebook
 
-Open index.html and modify the text in the "Hero", "About Me", "Projects", and "Contact" sections to reflect your own information.
+🐦 Twitter
 
-Update the src attribute of the <img> tag in the Hero section to your profile picture (e.g., pic.png).
+📸 Instagram
 
-Change the href attribute of the "Download Resume" link to point to your CV.pdf or equivalent file.
+👔 LinkedIn
 
-Projects:
+💻 GitHub
 
-In the "Projects" section, duplicate or remove project cards (div with class bg-gray-50 rounded-lg...) as needed.
-
-Update img src, alt text, project titles, descriptions, and the "View Project" links (<a> tags).
-
-Social Media Links:
-
-In the <footer> section, update the href attributes of the social media <a> tags to your respective profiles.
-
-Styling:
-
-Tailwind CSS: Most styling is done directly in the HTML using Tailwind CSS classes. You can modify these classes to change colors, fonts, spacing, and more.
-
-Colors: The primary blue color (blue-600, blue-700, blue-800, etc.) is used throughout. You can search and replace these classes with your preferred color palette from Tailwind CSS.
-
-Fonts: The Inter font is imported. You can change this by modifying the @import url in the <style> block within the <head> section and updating the font-inter class on the <body> tag.
-
-Contributing
-While this is a personal portfolio, suggestions for improvements are welcome. Please open an issue if you have any ideas or spot any bugs.
-
-License
+📄 License
 This project is open source and available under the MIT License.
 
-Contact
-Feel free to reach out to Brian through the contact form on the website or via his social media channels linked in the footer.
+“Code like a poet, debug like a detective, deploy like a boss.”
+— Brian 🚀
+
+yaml
+Copy
+Edit
+
+---
+
+If you'd like this exported as a file or auto-generated with a real screenshot, let me know!
+
+
+
+
+
+
+
+
+Ask ChatGPT
