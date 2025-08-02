@@ -3,7 +3,7 @@
 
 Welcome to the **source code** of my personal developer portfolio – a beautifully designed, responsive, and modern web page that showcases my skills, projects, and contact information.
 
-
+TO VIEW THE DEPLOYED LINK CLICK HERE https://brnezekiel.github.io/portfoliowebsite/
 ---
 
 ## 📌 Overview
