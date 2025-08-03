@@ -4,164 +4,369 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brian's Portfolio</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta8gBkm+K7ZFa0P6jgjD/jLpU5+jM7w+P2c6N5V3m2P7lQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    
     <style>
+        /* General Body and Layout */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* bg-gray-50 */
+            color: #1f2937; /* text-gray-800 */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.6;
         }
+
+        .container {
+            max-width: 80rem; /* max-w-7xl */
+            margin: auto;
+            padding: 2rem 1rem; /* py-8 px-4 */
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        /* Header */
+        .header {
+            background-color: #2563eb; /* bg-blue-600 */
+            color: white;
+            padding: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+        }
+        
+        .header-nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 80rem;
+            margin: auto;
+        }
+
+        .header-title {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .header-title:hover {
+            color: #bfdbfe; /* hover:text-blue-200 */
+        }
+
+        .header-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 1.5rem; /* space-x-6 */
+        }
+        
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem; /* rounded-md */
+            transition: color 0.3s ease;
+        }
+
+        .header-links a:hover {
+            color: #bfdbfe; /* hover:text-blue-200 */
+        }
+
+        @media (min-width: 640px) {
+            .header-nav {
+                flex-direction: row;
+            }
+            .header-title {
+                margin-bottom: 0;
+            }
+        }
+
+        /* Main Content */
+        .main-content {
+            flex-grow: 1;
+            max-width: 80rem;
+            margin: auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Sections */
+        .section {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+        }
+        
+        .section-title {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 800; /* font-extrabold */
+            color: #1d4ed8; /* text-blue-700 */
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #bfdbfe; /* border-b-2 border-blue-200 */
+            padding-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 600; /* font-semibold */
+            color: #2563eb; /* text-blue-600 */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Hero Section */
+        .profile-pic {
+            width: 15rem; /* w-60 */
+            height: 15rem; /* h-60 */
+            border-radius: 9999px; /* rounded-full */
+            display: block;
+            margin: 0 auto 1.5rem auto;
+            object-fit: cover;
+            border: 4px solid #93c5fd; /* border-4 border-blue-300 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+        }
+
+        .hero-heading {
+            font-size: 3rem; /* sm:text-5xl */
+            font-weight: 800; /* font-extrabold */
+            color: #1d4ed8;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .hero-text {
+            color: #374151; /* text-gray-700 */
+            line-height: 1.625; /* leading-relaxed */
+            margin-bottom: 1rem;
+            font-size: 1.25rem; /* text-xl */
+            text-align: center;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+        }
+        
+        .btn-primary {
+            background-color: #2563eb; /* bg-blue-600 */
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1d4ed8; /* hover:bg-blue-700 */
+        }
+        
+        .btn-secondary {
+            background-color: #e5e7eb; /* bg-gray-200 */
+            color: #1d4ed8; /* text-blue-700 */
+        }
+
+        .btn-secondary:hover {
+            background-color: #d1d5db; /* hover:bg-gray-300 */
+        }
+
+        /* About Section */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-badge {
+            background-color: #dbeafe; /* bg-blue-100 */
+            color: #1e40af; /* text-blue-800 */
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px; /* rounded-full */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500;
+        }
+
+        /* Projects Section */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .project-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .project-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .project-card {
+            background-color: #f9fafb; /* bg-gray-50 */
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 12rem;
+            object-fit: cover;
+        }
+        
+        .project-card-body {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Contact Section */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            color: #374151;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+        }
+
+        .btn-submit {
+            background-color: #2563eb;
+            color: white;
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .btn-submit:hover {
+            background-color: #1d4ed8;
+        }
+
+        .btn-download {
+            background-color: #16a34a; /* bg-green-600 */
+            color: white;
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .btn-download:hover {
+            background-color: #15803d; /* hover:bg-green-700 */
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1f2937; /* bg-gray-800 */
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+        }
+
+        .footer p {
+            margin: 0 0 1rem 0;
+            font-size: 1.125rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .social-icon-link {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .social-icon-link:hover {
+            transform: scale(1.1);
+        }
+
+        /* Specific Social Icon Colors */
+        .icon-facebook { background-color: #1e40af; } /* bg-blue-700 */
+        .icon-facebook:hover { background-color: #1e3a8a; } /* hover:bg-blue-800 */
+        .icon-twitter { background-color: #0ea5e9; } /* bg-sky-500 */
+        .icon-twitter:hover { background-color: #0284c7; } /* hover:bg-sky-600 */
+        .icon-instagram { background-color: #db2777; } /* bg-pink-600 */
+        .icon-instagram:hover { background-color: #c026d3; } /* hover:bg-pink-700 */
+        .icon-linkedin { background-color: #1e3a8a; } /* bg-blue-800 */
+        .icon-linkedin:hover { background-color: #172554; } /* hover:bg-blue-900 */
+        .icon-github { background-color: #374151; } /* bg-gray-700 */
+        .icon-github:hover { background-color: #111827; } /* hover:bg-gray-900 */
+
     </style>
 </head>
-<body class="font-inter antialiased bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+<body>
 
-    <header class="bg-blue-600 text-white p-4 shadow-md">
-        <nav class="flex flex-col sm:flex-row justify-between items-center max-w-7xl mx-auto">
-            <a href="#" class="text-3xl font-bold mb-4 sm:mb-0
-             hover:text-blue-200 transition duration-300">Brian's Portfolio</a>
-
-            <div class="flex flex-wrap justify-center items-center space-x-4 sm:space-x-6">
-                <ul class="flex flex-wrap justify-center space-x-4 sm:space-x-6">
-                    <li><a href="#hero" class="text-white hover:text-blue-200 transition duration-300 px-3 py-2 rounded-md">Home</a></li>
-                    <li><a href="#about" class="text-white hover:text-blue-200 transition duration-300 px-3 py-2 rounded-md">About Me</a></li>
-                    <li><a href="#projects" class="text-white hover:text-blue-200 transition duration-300 px-3 py-2 rounded-md">Projects</a></li>
-                    <li><a href="#contact" class="text-white hover:text-blue-200 transition duration-300 px-3 py-2 rounded-md">Contact</a></li>
-                </ul>
-                </div>
-        </nav>
-    </header>
-
-    <main class="flex-grow max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-
-        <section id="hero" class="bg-white p-6 sm:p-8 mb-8 rounded-lg shadow-sm">
-            <img src="pic.png" alt="Brian's Profile Photo" class="w-60 h-60 rounded-full mx-auto mb-6 object-cover border-4 border-blue-300 shadow-lg">
-            <h2 class="text-4xl sm:text-5xl font-extrabold text-blue-700 mb-4">Hi, I'm Brian!</h2>
-            <p class="text-gray-700 leading-relaxed mb-4 text-xl">
-                A passionate Web Developer with expertise in Front-end Development and UI/UX Design.
-                I love building impactful and user-friendly web solutions.
-                I thrive on building elegant and efficient solutions, and I'm always eager to learn new technologies and tackle challenging problems.
-                My ultimate goal is to create impactful products that make a real difference.
-            </p>
-            <a href="#projects" class="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300 shadow-md mr-4">View My Work</a>
-            <a href="#contact" class="inline-block bg-gray-200 text-blue-700 font-bold py-3 px-6 rounded-lg hover:bg-gray-300 transition duration-300 shadow-md">Get in Touch</a>
-        </section>
-
-        <section id="about" class="bg-white p-6 sm:p-8 mb-8 rounded-lg shadow-sm">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-700 mb-4 border-b-2 border-blue-200 pb-2">About Me</h2>
-            <p class="text-gray-700 leading-relaxed mb-4 text-lg">
-                I am a web developer with 3+ years of experience in creating responsive and dynamic web applications.
-                My journey in web development began in 2021, and since then, I've been dedicated to crafting clean, efficient, and scalable code.
-            </p>
-            <p class="text-gray-700 leading-relaxed text-lg">
-                I thrive on solving complex problems, learning new technologies, and collaborating with teams to bring innovative ideas to life. Outside of coding, you can find me hiking local trails or experimenting with new recipes in the kitchen.
-            </p>
-            <h3 class="text-2xl font-semibold text-blue-600 mt-6 mb-3">Skills</h3>
-            <div class="flex flex-wrap gap-3">
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">HTML/CSS</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">React</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Tailwind CSS</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Node.js</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Express.js</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">MongoDB</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Git/GitHub</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Responsive Design</span>
-            </div>
-        </section>
-
-        <section id="projects" class="bg-white p-6 sm:p-8 mb-8 rounded-lg shadow-sm">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-700 mb-4 border-b-2 border-blue-200 pb-2">My Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
-                    <img src="https://placehold.co/600x400/ADD8E6/000000?text=E-commerce+Site" alt="E-commerce Website Thumbnail" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-blue-600 mb-2">E-commerce Platform</h3>
-                        <p class="text-gray-700 mb-4">Developed a full-stack e-commerce site with user authentication, product listings, and a shopping cart. Built with React, Node.js, and MongoDB.</p>
-                        <a href="https://example.com/project1" target="_blank" class="text-blue-600 hover:underline font-medium">View Project &rarr;</a>
-                    </div>
-                </div>
-                <div class="bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
-                    <img src="https://placehold.co/600x400/D8BFD8/000000?text=Task+Manager+App" alt="Task Manager App Thumbnail" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Task Management App</h3>
-                        <p class="text-gray-700 mb-4">A responsive web application for managing daily tasks, featuring drag-and-drop functionality and user-specific dashboards. Implemented with Vue.js and Firebase.</p>
-                        <a href="https://example.com/project2" target="_blank" class="text-blue-600 hover:underline font-medium">View Project &rarr;</a>
-                    </div>
-                </div>
-                <div class="bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
-                    <img src="https://placehold.co/600x400/FFDAB9/000000?text=Blog+Platform" alt="Blog Platform Thumbnail" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Personal Blog Platform</h3>
-                        <p class="text-gray-700 mb-4">Designed and developed a personal blogging platform with a custom CMS, allowing for easy content creation and publishing. Styled with Tailwind CSS.</p>
-                        <a href="https://example.com/project3" target="_blank" class="text-blue-600 hover:underline font-medium">View Project &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="bg-white p-6 sm:p-8 mb-8 rounded-lg shadow-sm">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-700 mb-4 border-b-2 border-blue-200 pb-2">Get in Touch</h2>
-            <p class="text-gray-700 leading-relaxed mb-4 text-lg">
-                I'm always open to new opportunities and collaborations. Feel free to send me a message or connect with me on social media!
-            </p>
-            <form class="space-y-4">
-                <div>
-                    <label for="name" class="block text-gray-700 font-medium mb-1">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
-                </div>
-                <div>
-                    <label for="email" class="block text-gray-700 font-medium mb-1">Email</label>
-                    <input type="email" id="email" name="email" placeholder="your.email@example.com" class="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
-                </div>
-                <div>
-                    <label for="message" class="block text-gray-700 font-medium mb-1">Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Your message here..." class="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
-                </div>
-                <button type="submit" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300 shadow-md">Send Message</button>
-            </form>
-
-            <div class="mt-8 text-center">
-                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Download My Resume</h3>
-                <a href="CV.pdf" target="_blank" class="inline-block bg-green-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300 shadow-md" download="Brian_Resume.pdf">
-                    <i class="fas fa-download mr-2"></i> Download Resume
-                </a>
-                <p class="text-gray-600 text-sm mt-2">
-                    (CLICK THE BUTTON TO DOWNLOAD MY CV AND VIEW MY EDUCATION BACKGROUD😊)
-                </p>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-gray-800 text-white text-center p-6 mt-auto">
-        <p class="text-lg mb-4">&copy; 2025 Brian. All rights reserved.</p>
-
-        <div class="social-icons-container flex justify-center items-center space-x-4">
-            <a href="https://facebook.com/brnezekiel" target="_blank" aria-label="Facebook" class="social-icon flex items-center justify-center w-10 h-10 rounded-full text-white text-xl bg-blue-700 hover:bg-blue-800 hover:scale-110 transition duration-300 shadow-md">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://twitter.com/brnezekiel" target="_blank" aria-label="Twitter" class="social-icon flex items-center justify-center w-10 h-10 rounded-full text-white text-xl bg-sky-500 hover:bg-sky-600 hover:scale-110 transition duration-300 shadow-md">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://instagram.com/brnezekiel" target="_blank" aria-label="Instagram" class="social-icon flex items-center justify-center w-10 h-10 rounded-full text-white text-xl bg-pink-600 hover:bg-pink-700 hover:scale-110 transition duration-300 shadow-md">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://linkedin.com/in/brnezekiel" target="_blank" aria-label="LinkedIn" class="social-icon flex items-center justify-center w-10 h-10 rounded-full text-white text-xl bg-blue-800 hover:bg-blue-900 hover:scale-110 transition duration-300 shadow-md">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/brnezekiel" target="_blank" aria-label="GitHub" class="social-icon flex items-center justify-center w-10 h-10 rounded-full text-white text-xl bg-gray-700 hover:bg-gray-900 hover:scale-110 transition duration-300 shadow-md">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
-    </footer>
-
-</body>
-</html>
-
-
-
-
-
+    
