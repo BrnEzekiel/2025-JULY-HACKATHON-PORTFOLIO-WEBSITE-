@@ -13,14 +13,13 @@ This project is a **personal portfolio website** built to:
 - Showcase my skills in frontend & backend web development.
 - Display some of my best development projects.
 - Offer visitors a direct way to contact me or download my resume.
-- Present a professional online presence with dark/light theme toggle and responsive design.
+
 
 ---
 
 ## ✨ Features
 
-✅ Responsive layout that adapts perfectly across all screen sizes  
-🌙 Light/Dark mode toggle with localStorage theme persistence  
+✅ Responsive layout that adapts perfectly across all screen sizes   
 📁 Resume download button (PDF format)  
 🧠 Skills display using Tailwind badge styling  
 💼 Project showcase with links and previews  
@@ -129,11 +128,7 @@ This project is **open-source** and available under the [MIT License](LICENSE).
 
 ---
 
-## 🙏 Acknowledgements
-
-- [TailwindCSS](https://tailwindcss.com)
-- [Font Awesome](https://fontawesome.com)
-- [Google Fonts](https://fonts.google.com/)
+## 🙏 ACKNOWLEDGEMENT 
 - Inspired by many awesome developer portfolios across the web 🌐
 
 ---
